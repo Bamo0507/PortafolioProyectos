@@ -1,0 +1,46 @@
+:root {
+    --primary-color: #13274F;
+    --secondary-color: #6699cc;
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*
+estilos para la navigation bar
+*/
+
+/* Estilos generales del navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+}
+
+/* Estilos de los enlaces */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+/* Lista de navegación sin viñetas */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* Asegurar que la lista esté alineada horizontalmente */
+.nav-links li {
+    display: inline;
+}
+
+/* Efecto hover */
+.navbar a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
