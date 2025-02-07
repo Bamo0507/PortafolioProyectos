@@ -2,45 +2,129 @@
     --primary-color: #13274F;
     --secondary-color: #6699cc;
     --text-color: #333;
+    --backgound-color: #ffffff;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Amplitud', sans-serif;
+    margin: 0;
 }
 
-/*
-estilos para la navigation bar
-*/
-
 /* Estilos generales del navbar */
+/*
+    Flex - se utiliza para que se maneje el contenedor como una flex box, preguntar Erick
+    justify-content - se utiliza para alinear los elementos en el eje principal, en este caso horizontalmente
+    align-items - se utiliza para alinear los elementos en el eje secundario, en este caso verticalmente
+*/
 .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
+    justify-content: space-between; /* Espaciado entre el logo y las opciones */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 15px 20px; /* Ajuste el padding para evitar demasiado espacio */
+    font-size: large;
+    background-color: var(--backgound-color);
 }
 
 /* Estilos de los enlaces */
 .navbar a {
-    color: white;
     text-decoration: none;
     padding: 10px 15px;
+    color: var(--text-color);
 }
 
 /* Lista de navegación sin viñetas */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 60px;
 }
 
-/* Asegurar que la lista esté alineada horizontalmente */
-.nav-links li {
-    display: inline;
+ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Quita el padding predeterminado */
+    margin: 0; /* Quita el margen predeterminado */
+    display: flex;
+    align-items: center; /* Centra verticalmente */
 }
 
-/* Efecto hover */
-.navbar a:hover {
-    background-color: #555;
-    border-radius: 5px;
+ul li {
+    padding: 0 .5em .25em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+}
+
+ul li:hover {
+    color: #fff;
+  }
+  
+ul li:before {
+    content: "";
+    position: absolute;
+    inset: calc(100% - 5px) 0 0 0; /* 3px = the thickness */
+    background: var(--primary-color); /* the color */
+    scale: 0 1;
+    transition: .3s, translate 0s .3s;
+}
+
+ul:hover li:before {
+    scale: 1;
+}
+
+ul li:hover:before {
+    translate: 0;
+    transition: .3s;
+}
+
+ul:hover li:has(~ li:hover):before {
+    translate: 100% 0;
+    transition: .2s .2s,scale 0s .4s;
+}
+  
+ul:hover li:hover ~ li:before {
+    translate: -100% 0;
+    transition: .2s .2s,scale 0s .4s;
+}
+
+/* Garantizar que todo el contenido tenga su padding horizontal */
+main {
+    padding-inline: 10%;
+}
+
+/* Estilos para el HEADER */
+h1 {
+    font-size: 7rem;
+    color: var(--text-color);
+    text-align: start;
+    margin: 0;
+}
+
+h2 {
+    font-size: 3rem;
+    color: var(--text-color);
+    text-align: start;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Logo */
+.logo {
+    display: flex; /* Alinea el logo y el texto en fila */
+    align-items: center; /* Centra verticalmente */
+}
+
+.logo img {
+    width: 20px; /* Ajusta el tamaño del logo */
+    height: auto;
+    margin-right: 0px; /* Espaciado entre la imagen y el texto */
+    color: var(--primary-color)
+}
+
+/* Estilos para el Banner */
+.banner {
+    background-color: var(--primary-color);
+    color: var(--backgound-color);
+    height: auto;
+    
 }
