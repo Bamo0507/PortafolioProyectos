@@ -1,0 +1,11 @@
+{
+    "presets": [
+      ["@babel/preset-env", { "targets": { "node": "current" } }]
+    ],
+    "plugins": [
+      // Primero los decorators en modo legacy
+      ["@babel/plugin-proposal-decorators", { "legacy": true }],
+      // Luego las class-properties, también en loose
+      ["@babel/plugin-proposal-class-properties", { "loose": true }]
+    ]
+}
